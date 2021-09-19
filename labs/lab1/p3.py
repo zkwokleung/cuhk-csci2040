@@ -9,7 +9,7 @@ def print_mountain(ipt: str, depth: int):
 
 while(True):
     n = int(input("Enter an integer:"))
-    if n == 0:
+    if n <= 0:
         break
     ipt = input("Enter a string:")
     print_mountain(ipt, n)

@@ -22,5 +22,5 @@ for i in range(5):
         print("You missed!")
 
 print("Finished with {} goals and {} top bin.".format(goal, top_bin))
-print("Your final score is {}".format(score))
+print("Your final score is {}.".format(score))
 print("Program ends.")
