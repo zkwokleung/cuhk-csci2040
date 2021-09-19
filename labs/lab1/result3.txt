@@ -1,0 +1,5 @@
+TEST 1 OK!
+TEST 2 OK!
+b'Program ends.'
+TEST 3 OK!
+You pass all the tests!

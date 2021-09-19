@@ -1,0 +1,11 @@
+b'I do not understand what you mean! Say again: 012'
+TEST 1 OK!
+b'I do not understand what you mean! Say again: 010'
+TEST 2 OK!
+b'No BRIBING as I am loyal to the King!: NB aA  bn'
+TEST 3 OK!
+b'I do not understand what you mean! Say again: NB aA bn'
+TEST 4 OK!
+b'Welcome to the wonderland!'
+TEST 5 OK!
+You pass all the tests!

@@ -1,0 +1,19 @@
+b'Please input goal posts:'
+TEST 1 OK!
+b'You missed!'
+TEST 2 OK!
+b'Goal!'
+TEST 3 OK!
+b'Goal!'
+TEST 4 OK!
+b'Top Bin!!!'
+TEST 5 OK!
+b'You missed!'
+TEST 6 OK!
+b'Finished with 2 goals and 1 top bin.'
+TEST 7 OK!
+b'Your final score is 4.'
+TEST 8 OK!
+b'Program ends.'
+TEST 9 OK!
+You pass all the tests!

@@ -1,0 +1,9 @@
+b'Your input is not an integer!'
+TEST 0 OK!
+b'Your input is not an integer!'
+TEST 1 OK!
+b'The value is 4.'
+TEST 2 OK!
+b'Program ends.'
+TEST 3 OK!
+You pass all the tests!

@@ -1,0 +1,13 @@
+b'Current GPA: 3.70\r\n'
+TEST 1 OK!
+b'Current GPA: 3.54\r\n'
+TEST 2 OK!
+b'Wrong input!'
+TEST 3 OK!
+b'Wrong input!'
+TEST 4 OK!
+b'Your GPA: 3.54.'
+TEST 5 OK!
+b'Program ends.'
+TEST 6 OK!
+You pass all the tests!
