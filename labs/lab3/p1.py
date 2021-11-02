@@ -10,7 +10,7 @@ def non_unique(list):
             result[i] += 1
         else:
             result[i] = 1
-
+    #sup
     # print("DEBUG:", joinedList)
     # print("DEBUG:", result)
 
