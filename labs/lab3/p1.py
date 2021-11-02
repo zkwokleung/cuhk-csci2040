@@ -4,7 +4,7 @@ def non_unique(list):
     for l in list:
         joinedList += l
     joinedList.sort()
-#hiiii
+
     for i in joinedList:
         if i in result:
             result[i] += 1
