@@ -4,9 +4,8 @@ import pickle as pk
 
 def load_data(file):
     try:
-        f = open(file, 'rb')
-        result = pk.load(f)
-        f.close()
+        with open(file, 'rb') as f:
+            result = pk.load(f)
     except error:
         print(error)
         print("ERROR: Target file does NOT exist!")
@@ -33,10 +32,10 @@ def update():
         if "Mildred Jones" in v:
             v.remove("Mildred Jones")
     del follower_data["Mildred Jones"]
+    # Save to file
     try:
-        f = open("followers-updated.pydata", 'w')
-        pk.dump(follower_data, f)
-        f.close()
+        with open("followers-updated.pydata", 'wb') as f:
+            pk.dump(follower_data, f)
     except:
         pass
 
@@ -50,6 +49,6 @@ def get_num_of_followers():
 
 if __name__ == '__main__':
     # print({most_follower(load_data("followers-updated.pydata"))})
-    # update()
+    update()
     print(get_num_of_followers())
     pass
