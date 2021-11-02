@@ -6,8 +6,7 @@ def load_data(file):
     try:
         with open(file, 'rb') as f:
             result = pk.load(f)
-    except error:
-        print(error)
+    except:
         print("ERROR: Target file does NOT exist!")
         result = {}
 
