@@ -24,22 +24,17 @@ fruit = [
 ]
 
 # 1.
-v_list = [k.upper()
-          for (k, v) in vehicle_dict.items() if vehicle_dict[k] < 2500]
-print(v_list)
+print([k.upper() for (k, v) in vehicle_dict.items() if vehicle_dict[k] < 2500])
 
 # 2.
-mul_table = [' '.join([f"{j}*{i}={j*i}" for j in range(1, i+1)])
-             for i in range(1, 10)]
-print(mul_table)
+print([' '.join([f"{j}*{i}={j*i}" for j in range(1, i+1)])
+      for i in range(1, 10)])
 
 # 3.
-squares = list(map(lambda x: x*x, range(1, 11)))
-print(squares)
+print(list(map(lambda x: x*x, range(1, 11))))
 
 # 4.
-evens = list(filter(lambda x: x % 2 == 0, range(1, 11)))
-print(evens)
+print(list(filter(lambda x: x % 2 == 0, range(1, 11))))
 
 # 5.
 # TODO
