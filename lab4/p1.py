@@ -24,16 +24,21 @@ fruit = [
 ]
 
 # 1.
-print([k.upper() for (k, v) in vehicle_dict.items() if vehicle_dict[k] < 2500])
+list1 = [k.upper()for (k, v) in vehicle_dict.items() if vehicle_dict[k] < 2500]
+print(list1)
 
 # 2.
-print([' '.join([f"{j}*{i}={j*i}" for j in range(1, i+1)]) for i in range(1, 10)])
+list2 = [' '.join([f"{j}*{i}={j*i}" for j in range(1, i+1)]) for i in range(1, 10)]
+print(list2)
 
 # 3.
-print(list(map(lambda x: x*x, range(1, 11))))
+list3 = list(map(lambda x: x*x, range(1, 11)))
+print(list3)
 
 # 4.
-print(list(filter(lambda x: x % 2 == 0, range(1, 11))))
+list4 = list(filter(lambda x: x % 2 == 0, range(1, 11)))
+print(list4)
 
 # 5.
-print({k: reduce(lambda a, b: (a+b) * 1.0, [e[k] for e in fruit]) for k in fruit[0].keys()})
+dict5 = {k: reduce(lambda a, b: (a+b) * 1.0, [e[k] for e in fruit]) for k in fruit[0].keys()}
+print(dict5)
