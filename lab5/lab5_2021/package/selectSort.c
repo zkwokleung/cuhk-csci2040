@@ -1,10 +1,10 @@
 #include <Python.h>
 
-void swap(int *xp, int *yp)
+void swap(int *a, int *b)
 {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
 }
 
 void CselectSort(long arr[], int n)
