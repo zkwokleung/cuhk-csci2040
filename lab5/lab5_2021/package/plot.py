@@ -5,8 +5,8 @@ import random
 
 
 # Controlable variables
-time_python = 10  # Time taken to perform the sort in python
-time_C = 1  # Time taken to perform the sort in C
+time_python = 8.206  # Time taken to perform the sort in python
+time_C = 0.037  # Time taken to perform the sort in C
 arr_size = 10000  # The size of array and the x limit
 low_bound, up_bound = -1000000, 1000000  # The bound of random numbers
 
@@ -31,10 +31,11 @@ def selectSort(list):
 
 # get the intermediate steps
 selectSort(origin_lst)
-steps = steps[::10]  # Skipping some steps to speed up the animation
+# steps = steps[::100]  # Skipping some steps to speed up the animation
 lst4python = steps[::]  # The y value for the Python plot
 # The y value for the C plot. Skipping some steps to visualize the speed differences
 lst4C = steps[::int(ratio)]
+lst4C.append(steps[-1])  # Append the last step in case it dosent include
 
 
 # The plot
@@ -55,8 +56,11 @@ ln_C, = ax[1].plot(x, lst4C[0], "bo")
 def init():
     ax[0].set_xlim(0, arr_size)
     ax[0].set_ylim(low_bound, up_bound)
+    ax[0].ticklabel_format(useOffset=False)
+
     ax[1].set_xlim(0, arr_size)
     ax[1].set_ylim(low_bound, up_bound)
+    ax[1].ticklabel_format(useOffset=False)
     return [ln_python, ln_C]
 
 
@@ -71,6 +75,6 @@ def update(frame):
 
 
 ani = FuncAnimation(fig, update, frames=range(len(steps)),
-                    init_func=init, blit=True)
+                    init_func=init, blit=True, repeat=False, interval=1)
 
 plt.show()
