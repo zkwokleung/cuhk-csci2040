@@ -10,11 +10,9 @@ import myModule
 arr_size = 10000
 
 # Two excatly same list for 2 sorting method
-# lst4python = [random.randint(-1000000, 1000000) for _ in range(arr_size)]
-lst4python = []
+lst4python = [random.randint(-1000000, 1000000) for _ in range(arr_size)]
 lst4C = lst4python.copy()
-# x = np.arange(0, arr_size)
-x = []
+x = np.arange(0, arr_size)
 running = False
 
 # The plot
@@ -38,12 +36,10 @@ def init():
 
 
 def update(frame):
-    # global running
-    # if not running:
-    #     selectSort(lst4python)
-    #     running = True
-    lst4python.append(random.randint(-1000000, 1000000))
-    x.append(len(lst4python) - 1)
+    global running
+    if not running:
+        selectSort(lst4python)
+        running = True
 
 
 ani = FuncAnimation(fig, update, frames=np.linspace(0, 2*np.pi, 128),
