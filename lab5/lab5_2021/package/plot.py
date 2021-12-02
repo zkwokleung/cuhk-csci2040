@@ -32,7 +32,9 @@ def selectSort(list):
 # get the intermediate steps
 selectSort(origin_lst)
 # steps = steps[::100]  # Skipping some steps to speed up the animation
-lst4python = steps[::]  # The y value for the Python plot
+# The y value for the Python plot. Skipped some of the steps to increase the speed
+lst4python = steps[::10]
+lst4python.append(steps[-1])  # Append the last step in case it dosent include
 # The y value for the C plot. Skipping some steps to visualize the speed differences
 lst4C = steps[::int(ratio)]
 lst4C.append(steps[-1])  # Append the last step in case it dosent include
@@ -45,22 +47,22 @@ fig, ax = plt.subplots(nrows=2)
 ax[0].set_title("Sort using Python")
 # Hide the X axis since it is overlapping with the graph below
 ax[0].get_xaxis().set_visible(False)
-ln_python, = ax[0].plot(x, lst4python[0], "ro")
+ax[0].ticklabel_format(useOffset=False)
+ln_python, = ax[0].plot(x, lst4python[0], "ro", markersize=2)
 
 # C
 ax[1].set_title("Sort using C")
-ln_C, = ax[1].plot(x, lst4C[0], "bo")
+ax[1].ticklabel_format(useOffset=False)
+ln_C, = ax[1].plot(x, lst4C[0], "bo", markersize=2)
 
 
 # Animation function
 def init():
     ax[0].set_xlim(0, arr_size)
     ax[0].set_ylim(low_bound, up_bound)
-    ax[0].ticklabel_format(useOffset=False)
 
     ax[1].set_xlim(0, arr_size)
     ax[1].set_ylim(low_bound, up_bound)
-    ax[1].ticklabel_format(useOffset=False)
     return [ln_python, ln_C]
 
 
