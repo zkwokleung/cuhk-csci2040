@@ -47,12 +47,12 @@ fig, ax = plt.subplots(nrows=2)
 ax[0].set_title("Sort using Python")
 # Hide the X axis since it is overlapping with the graph below
 ax[0].get_xaxis().set_visible(False)
-ax[0].ticklabel_format(useOffset=False)
+ax[0].ticklabel_format(useOffset=False, style='plain')
 ln_python, = ax[0].plot(x, lst4python[0], "ro", markersize=2)
 
 # C
 ax[1].set_title("Sort using C")
-ax[1].ticklabel_format(useOffset=False)
+ax[1].ticklabel_format(useOffset=False, style='plain')
 ln_C, = ax[1].plot(x, lst4C[0], "bo", markersize=2)
 
 
