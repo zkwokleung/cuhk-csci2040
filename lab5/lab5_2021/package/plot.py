@@ -1,25 +1,37 @@
+import time
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 import random
+import myModule
 
 
 # Controlable variables
-time_python = 8.206  # Time taken to perform the sort in python
-time_C = 0.037  # Time taken to perform the sort in C
-arr_size = 10000  # The size of array and the x limit
+# User Input
+flag = True
+while flag:
+    arr_size = int(input("Input array size: "))
+    if 1 <= arr_size <= 20000:
+        flag = False
+    else:
+        print("Size must be within 1 to 20000.")
 low_bound, up_bound = -1000000, 1000000  # The bound of random numbers
 
-# Runtime variables
-steps = []  # An array to store the intermediate steps
-ratio = time_python / time_C  # the ratio
-origin_lst = [random.randint(low_bound, up_bound)
-              for _ in range(arr_size)]  # list for sorting
-x = np.arange(0, arr_size)  # The x value for the plot
+
+# Define the selection sort in Python
+def selectSort(list):
+    for i in range(len(list) - 1):
+        min_idx = i
+        for j in range(i+1, len(list)):
+            if list[j] < list[min_idx]:
+                min_idx = j
+        list[i], list[min_idx] = list[min_idx], list[i]
+
+    return list
 
 
 # Modified selectSort to store every intermediate step to a list
-def selectSort(list):
+def selectSortMod(list):
     for i in range(len(list)):
         min_idx = i
         for j in range(i+1, len(list)):
@@ -29,8 +41,32 @@ def selectSort(list):
         steps.append(list[::])
 
 
+# Generate a random list
+lst = [random.randint(low_bound, up_bound)
+       for _ in range(arr_size)]
+
+# Test the runtime in C
+start = time.time()
+myModule.selectSort(lst)
+end = time.time()
+time_C = end - start  # Time taken to perform the sort in C
+
+# Test the runtime in python
+start = time.time()
+selectSort(lst)
+end = time.time()
+time_python = end - start  # Time taken to perform the sort in python
+
+# Runtime variables
+steps = []  # An array to store the intermediate steps
+ratio = time_python / time_C  # the ratio
+origin_lst = [random.randint(low_bound, up_bound)
+              for _ in range(arr_size)]  # list for sorting
+x = np.arange(0, arr_size)  # The x value for the plot
+
+
 # get the intermediate steps
-selectSort(origin_lst)
+selectSortMod(origin_lst)
 # steps = steps[::100]  # Skipping some steps to speed up the animation
 # The y value for the Python plot. Skipped some of the steps to increase the speed
 lst4python = steps[::10]
